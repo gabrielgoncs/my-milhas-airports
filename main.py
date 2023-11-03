@@ -7,7 +7,7 @@ def filter_and_normalize_airports(airports):
     filtered_airports = []
 
     for key, airport in airports.items():
-        if airport["country"] == "BR" and airport["iata"]:
+        if airport["country"] == "BR" and airport["iata"] and airport["iata"] != "\\N" and airport["iata"] != "0":
             airport["state"] = normalize_state(airport["state"])
             filtered_airports.append(airport)
 
